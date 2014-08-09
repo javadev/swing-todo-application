@@ -550,30 +550,40 @@ public class SwingTodoApp extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         jCheckBox2.setVisible(false);
+        jCheckBox2.setSelected(false);
+        setFontToCheckbox(jCheckBox2, false);
         jButton1.setVisible(false);
         calculateItemsLeft();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         jCheckBox3.setVisible(false);
+        jCheckBox3.setSelected(false);
+        setFontToCheckbox(jCheckBox3, false);
         jButton2.setVisible(false);
         calculateItemsLeft();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         jCheckBox4.setVisible(false);
+        jCheckBox4.setSelected(false);
+        setFontToCheckbox(jCheckBox4, false);
         jButton3.setVisible(false);
         calculateItemsLeft();
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         jCheckBox5.setVisible(false);
+        jCheckBox5.setSelected(false);
+        setFontToCheckbox(jCheckBox5, false);
         jButton4.setVisible(false);
         calculateItemsLeft();
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         jCheckBox6.setVisible(false);
+        jCheckBox6.setSelected(false);
+        setFontToCheckbox(jCheckBox6, false);
         jButton5.setVisible(false);
         calculateItemsLeft();
     }//GEN-LAST:event_jButton5ActionPerformed
