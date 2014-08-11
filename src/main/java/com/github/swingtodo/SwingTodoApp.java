@@ -74,6 +74,8 @@ public class SwingTodoApp extends javax.swing.JFrame {
         jTextField5.setVisible(false);
         jTextField6 = new javax.swing.JTextField();
         jTextField6.setVisible(false);
+        jButton6 = new javax.swing.JButton();
+        jButton6.setVisible(false);
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -309,6 +311,13 @@ public class SwingTodoApp extends javax.swing.JFrame {
             }
         });
 
+        jButton6.setText("Clear 1 completed item");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -333,7 +342,8 @@ public class SwingTodoApp extends javax.swing.JFrame {
                                 .addComponent(jLabel5)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jLabel6)
-                                .addGap(0, 0, Short.MAX_VALUE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jButton6))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(jTextField6)
@@ -404,7 +414,8 @@ public class SwingTodoApp extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 6, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
-                    .addComponent(jLabel6))
+                    .addComponent(jLabel6)
+                    .addComponent(jButton6))
                 .addContainerGap())
         );
 
@@ -720,6 +731,40 @@ public class SwingTodoApp extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jCheckBox6MouseClicked
 
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        if (jCheckBox2.isSelected()) {
+            jCheckBox2.setVisible(false);
+            jCheckBox2.setSelected(false);
+            setFontToCheckbox(jCheckBox2, false);
+            jButton1.setVisible(false);
+        }
+        if (jCheckBox3.isSelected()) {
+            jCheckBox3.setVisible(false);
+            jCheckBox3.setSelected(false);
+            setFontToCheckbox(jCheckBox3, false);
+            jButton2.setVisible(false);
+        }
+        if (jCheckBox4.isSelected()) {
+            jCheckBox4.setVisible(false);
+            jCheckBox4.setSelected(false);
+            setFontToCheckbox(jCheckBox4, false);
+            jButton3.setVisible(false);
+        }
+        if (jCheckBox5.isSelected()) {
+            jCheckBox5.setVisible(false);
+            jCheckBox5.setSelected(false);
+            setFontToCheckbox(jCheckBox5, false);
+            jButton4.setVisible(false);
+        }
+        if (jCheckBox6.isSelected()) {
+            jCheckBox6.setVisible(false);
+            jCheckBox6.setSelected(false);
+            setFontToCheckbox(jCheckBox6, false);
+            jButton5.setVisible(false);
+        }
+        calculateItemsLeft();
+    }//GEN-LAST:event_jButton6ActionPerformed
+
     private void setFontToCheckbox(JCheckBox jCheckBox, boolean stricted) {
         Font font = jCheckBox.getFont();
         Map attributes = font.getAttributes();
@@ -769,7 +814,32 @@ public class SwingTodoApp extends javax.swing.JFrame {
             items += 1;
         }
         jLabel5.setText(String.valueOf(items));
-        hideCheckBoxMarkAll();
+        displayClearButton();
+        hideCheckBoxMarkAll();    }
+    
+    private void displayClearButton() {
+        int items = 0;
+        if (jCheckBox2.isVisible() && jCheckBox2.isSelected()) {
+            items += 1;
+        }
+        if (jCheckBox3.isVisible() && jCheckBox3.isSelected()) {
+            items += 1;
+        }
+        if (jCheckBox4.isVisible() && jCheckBox4.isSelected()) {
+            items += 1;
+        }
+        if (jCheckBox5.isVisible() && jCheckBox5.isSelected()) {
+            items += 1;
+        }
+        if (jCheckBox6.isVisible() && jCheckBox6.isSelected()) {
+            items += 1;
+        }
+        jButton6.setVisible(items > 0);
+        jButton6.setText(String.format("Clear %d completed item", items)
+                + (items > 1 ? "s" : ""));
+        if (items == 0) {
+            jCheckBox1.setSelected(false);
+        }
     }
     /**
      * @param args the command line arguments
@@ -812,6 +882,7 @@ public class SwingTodoApp extends javax.swing.JFrame {
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
     private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JCheckBox jCheckBox2;
     private javax.swing.JCheckBox jCheckBox3;
