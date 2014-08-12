@@ -461,6 +461,9 @@ public class SwingTodoApp extends javax.swing.JFrame {
 
     private void jTextField1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField1KeyPressed
         if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            if (jTextField1.getText().isEmpty()) {
+                return;
+            }
             if (!jCheckBox2.isVisible()) {
                 jCheckBox2.setText(jTextField1.getText());
                 jCheckBox2.setVisible(true);
