@@ -238,6 +238,9 @@
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jCheckBox1ActionPerformed"/>
           </Events>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_CreateCodePost" type="java.lang.String" value="jCheckBox1.setVisible(false);"/>
+          </AuxValues>
         </Component>
         <Component class="javax.swing.JCheckBox" name="jCheckBox2">
           <Properties>

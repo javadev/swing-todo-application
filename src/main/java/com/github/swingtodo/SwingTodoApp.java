@@ -41,6 +41,7 @@ public class SwingTodoApp extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
         jCheckBox1 = new javax.swing.JCheckBox();
+        jCheckBox1.setVisible(false);
         jCheckBox2 = new javax.swing.JCheckBox();
         jCheckBox2.setVisible(false);
         jLabel5 = new javax.swing.JLabel();
@@ -730,6 +731,26 @@ public class SwingTodoApp extends javax.swing.JFrame {
         jCheckBox.setFont(new Font(attributes));        
     }
     
+    private void hideCheckBoxMarkAll() {
+        int visibleItems = 0;
+        if (jCheckBox2.isVisible()) {
+            visibleItems += 1;
+        }
+        if (jCheckBox3.isVisible()) {
+            visibleItems += 1;
+        }
+        if (jCheckBox4.isVisible()) {
+            visibleItems += 1;
+        }
+        if (jCheckBox5.isVisible()) {
+            visibleItems += 1;
+        }
+        if (jCheckBox6.isVisible()) {
+            visibleItems += 1;
+        }
+        jCheckBox1.setVisible(visibleItems != 0);
+    }
+    
     private void calculateItemsLeft() {
         int items = 0;
         if (jCheckBox2.isVisible() && !jCheckBox2.isSelected()) {
@@ -748,6 +769,7 @@ public class SwingTodoApp extends javax.swing.JFrame {
             items += 1;
         }
         jLabel5.setText(String.valueOf(items));
+        hideCheckBoxMarkAll();
     }
     /**
      * @param args the command line arguments
