@@ -15,10 +15,10 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
-        <version>2.3.2</version>
+        <version>3.11.0</version>
         <configuration>
-          <source>1.5</source>
-          <target>1.5</target>
+          <source>1.8</source>
+          <target>1.8</target>
           <encoding>UTF-8</encoding>
         </configuration>
       </plugin>
@@ -91,7 +91,7 @@
         <artifactId>maven-pmd-plugin</artifactId>
         <version>3.0.1</version>
             <configuration>
-                <targetJdk>1.5</targetJdk> 
+                <targetJdk>1.8</targetJdk> 
                 <rulesets>
                   <ruleset>rulesets/java/basic.xml</ruleset>
                   <ruleset>rulesets/java/design.xml</ruleset>
@@ -127,7 +127,7 @@
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>4.13.1</version>
+      <version>4.13.2</version>
       <scope>test</scope>
     </dependency>
   </dependencies>
